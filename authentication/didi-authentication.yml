@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  DiDi Enterprise Services (DDES) Open API access guide
+  https://opendocs.xiaojukeji.com/version2024 (接入前必读 /version2024/10957) and the
+  official Java SDK config reference
+  https://github.com/didi/ddes-openapi-sdk-java (com.xiaoju.open.sdk.didies.core.Config).
+  Derived from published SDK defaults and the docs onboarding flow; no OpenAPI
+  securitySchemes are published for this API.
+docs: https://opendocs.xiaojukeji.com/version2024
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - clientCredentials
+  request_signing: true
+  notes: >-
+    App-level (machine-to-machine) authentication. There is no per-user OAuth
+    scope surface; access is governed by the enterprise application plus an IP
+    allow-list, so no scopes/ artifact is emitted.
+schemes:
+  - name: DDESClientCredentials
+    type: oauth2
+    flow: clientCredentials
+    grant_type: client_credentials
+    base_url: https://api.es.xiaojukeji.com
+    credentials:
+      client_id: required (clientId — client identity)
+      client_secret: required (clientSecret — client secret)
+      sign_key: required (signKey — request signing key, separate from client_secret)
+    token:
+      grant_type: client_credentials
+      auto_managed: true
+      retry_on_unauthorized: default 2 retries, 1000ms interval
+    signing:
+      required: true
+      methods: [MD5, SHA256]
+      default: MD5
+    payload_encryption:
+      supported: true
+      type: AES128/AES256 (optional whole-payload AES, default off)
+    ip_allow_list: required (IP whitelist configured per application)
+    sources:
+      - https://github.com/didi/ddes-openapi-sdk-java
+      - https://opendocs.xiaojukeji.com/version2024
