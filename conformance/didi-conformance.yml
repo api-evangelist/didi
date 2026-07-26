@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from the DiDi Enterprise Services (DDES) Open API auth/signing model
+  documented at https://opendocs.xiaojukeji.com/version2024 and the first-party
+  SDKs (github.com/didi/ddes-openapi-sdk-java / -go). No published third-party
+  certification program (SOC 2 / ISO 27001 / PCI) was found for the DDES API, so
+  no Compliance pointer is emitted.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: DDES SDK uses OAuth 2.0 grant_type client_credentials for token acquisition.
+  - id: oauth2-client-credentials
+    conforms: true
+    evidence: Default grantType client_credentials in com.xiaoju.open.sdk.didies.core.Config.
+  - id: oidc
+    conforms: false
+    evidence: No OpenID Connect discovery or id_token flow documented.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No application/problem+json error envelope documented.
+  - id: request-signing
+    conforms: true
+    evidence: Every request signed with signKey (MD5 default, SHA256 optional).
+  - id: fapi
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: fhir
+    conforms: false
+  - id: json-api
+    conforms: false

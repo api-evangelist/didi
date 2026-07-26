@@ -1,0 +1,26 @@
+# DiDi (DiDi Global)
+
+> DiDi Global is a mobility technology platform (ride-hailing, taxi, and enterprise travel). This profile covers DiDi's public developer surface: the DiDi Enterprise Services (DDES) Open API for enterprise employee-travel management, base URL https://api.es.xiaojukeji.com, documented at https://opendocs.xiaojukeji.com/version2024. Authentication is OAuth 2.0 client_credentials plus per-request signing (MD5/SHA256) and an optional AES payload encryption, with a required IP allow-list. Official Java and Go SDKs are published under the github.com/didi organization. This is an API Evangelist catalog profile, not an official DiDi document.
+
+## API
+
+- [DiDi Enterprise (DDES) Open API docs](https://opendocs.xiaojukeji.com/version2024): Enterprise employee vehicle-usage and travel management interfaces — approval, bills, budget/cost centers, orders, SSO, users, roles, and company entities.
+- [DDES access guide (接入前必读)](https://opendocs.xiaojukeji.com/version2024/10957): create an application, obtain credentials, set the IP allow-list, then call the API.
+
+## SDKs
+
+- [ddes-openapi-sdk-java](https://github.com/didi/ddes-openapi-sdk-java): Official Java SDK — Maven com.xiaoju.sdk:ddes-open-sdk:1.0.0.
+- [ddes-openapi-sdk-go](https://github.com/didi/ddes-openapi-sdk-go): Official Go SDK — go get github.com/didi/ddes-openapi-sdk-go (v1.1.0).
+
+## Artifacts
+
+- [Authentication profile](authentication/didi-authentication.yml): OAuth 2.0 client_credentials + signKey request signing + optional AES.
+- [API conventions](conventions/didi-conventions.yml): auth, signing, encryption, versioning, token retry.
+- [Packages / SDKs](packages/didi-packages.yml): first-party Java and Go clients.
+- [Conformance](conformance/didi-conformance.yml): standards the DDES API conforms to.
+- [Domain security](security/didi-domain-security.yml): TLS/HSTS/DNS posture (probed).
+
+## Org
+
+- [DiDi GitHub organization](https://github.com/didi): official open source (opensource@didichuxing.com).
+- [DiDi Global website](https://www.didiglobal.com)

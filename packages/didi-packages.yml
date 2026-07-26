@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://github.com/didi (official DiDi GitHub organization,
+  opensource@didichuxing.com) and the DiDi Enterprise (DDES) open API docs at
+  https://opendocs.xiaojukeji.com/version2024. These are the first-party client
+  libraries for DiDi's Enterprise Services (DDES) Open API. Maven coordinates
+  and default baseUrl were read verbatim from each SDK README.
+description: >-
+  First-party DiDi Enterprise Services (DDES) Open API client libraries. Both
+  are published under the official github.com/didi organization and target the
+  same enterprise employee-travel management API (base URL
+  https://api.es.xiaojukeji.com). No public npm / PyPI / NuGet client for the
+  DDES API was found at fetch time.
+packages:
+  - language: java
+    registry: maven
+    name: com.xiaoju.sdk:ddes-open-sdk
+    url: https://github.com/didi/ddes-openapi-sdk-java
+    source: https://github.com/didi/ddes-openapi-sdk-java
+    install: >-
+      Maven dependency com.xiaoju.sdk:ddes-open-sdk:1.0.0 (or clone and
+      mvn clean install)
+    version: 1.0.0
+    official: true
+  - language: go
+    registry: github
+    name: github.com/didi/ddes-openapi-sdk-go
+    url: https://github.com/didi/ddes-openapi-sdk-go
+    source: https://github.com/didi/ddes-openapi-sdk-go
+    install: go get github.com/didi/ddes-openapi-sdk-go
+    version: v1.1.0
+    official: true

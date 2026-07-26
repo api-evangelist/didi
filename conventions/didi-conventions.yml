@@ -1,0 +1,65 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  DiDi Enterprise Services (DDES) Open API docs
+  https://opendocs.xiaojukeji.com/version2024 and the first-party Java SDK
+  https://github.com/didi/ddes-openapi-sdk-java. Captures the cross-cutting
+  request/response semantics that apply to every DDES endpoint.
+description: >-
+  How DiDi's Enterprise Services (DDES) Open API behaves across operations:
+  authentication style, request signing, optional payload encryption, versioning,
+  and error/token-retry behavior. Idempotency is NOT documented by the provider,
+  so no Idempotency contract is asserted.
+
+base_url: https://api.es.xiaojukeji.com
+api_style: REST over HTTPS, JSON request/response
+
+authentication:
+  scheme: OAuth 2.0 client_credentials (app-level) with per-request signing
+  credentials: [clientId, clientSecret, signKey]
+  detail: authentication/didi-authentication.yml
+  docs: https://opendocs.xiaojukeji.com/version2024
+
+request_signing:
+  required: true
+  methods: [MD5, SHA256]
+  default: MD5
+  note: Every request is signed with signKey; sign method is agreed with the integration contact.
+
+payload_encryption:
+  supported: true
+  type: optional whole-payload AES (AES128 / AES256), default disabled
+  note: When AES is enabled, personnel fields do not require additional field-level encryption.
+
+access_control:
+  ip_allow_list: required per application
+
+token_handling:
+  auto_managed: true
+  unauthorized_retry_times: 2
+  unauthorized_retry_interval_ms: 1000
+
+versioning:
+  scheme: "documentation-versioned open platform (current: version2024)"
+  docs: https://opendocs.xiaojukeji.com/version2024
+
+idempotency:
+  supported: false
+  note: DiDi does not document an idempotency-key mechanism for the DDES API.
+
+resource_groups:
+  - auth
+  - approval (pre-trip / post-trip / external)
+  - bill
+  - budgetcenter
+  - city
+  - extend
+  - legalentity
+  - login (single sign-on)
+  - member
+  - order
+  - rank
+  - regulation
+  - role
+  - traveler
+  - workplace

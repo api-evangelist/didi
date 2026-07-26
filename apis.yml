@@ -1,8 +1,29 @@
 aid: didi
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/didi.png
 name: Didi
-description: 'Didi is a company surfaced as a portfolio company of hillhouse, softbank-vision-fund and
-  added to the API Evangelist network as a stub for enrichment. Sector: mobility. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  DiDi Global is a mobility technology platform best known for ride-hailing,
+  taxi-hailing, and enterprise employee travel across China and international
+  markets. DiDi exposes a public developer surface through DiDi Enterprise
+  Services (DDES) — an Open API for corporate travel management covering approval
+  workflows, bills, budget/cost centers, orders, single sign-on, users, roles,
+  and company entities. The DDES API (base URL https://api.es.xiaojukeji.com) is
+  documented at opendocs.xiaojukeji.com/version2024, secured with OAuth 2.0
+  client_credentials plus per-request signing, and shipped with official Java
+  and Go SDKs under the github.com/didi organization. DiDi is backed by
+  Hillhouse and the SoftBank Vision Fund.
 url: https://raw.githubusercontent.com/api-evangelist/didi/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,11 +34,35 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Mobility
-apis: []
+- Ride Hailing
+- Transportation
+- Enterprise Travel
+- Expense Management
+- OAuth
+apis:
+- name: DiDi Enterprise (DDES) Open API
+  description: >-
+    DiDi Enterprise Services (DDES) Open API for corporate employee travel
+    management — approval, bills, budget/cost centers, city info, company
+    entities, single sign-on, users, orders, ranks, regulations, roles,
+    external travelers, and work locations.
+  humanURL: https://opendocs.xiaojukeji.com/version2024
+  baseURL: https://api.es.xiaojukeji.com
+  tags:
+  - Enterprise Travel
+  - Mobility
+  - Expense Management
+  properties:
+  - type: Documentation
+    url: https://opendocs.xiaojukeji.com/version2024
+  - type: APIReference
+    url: https://opendocs.xiaojukeji.com/version2024
+  - type: GettingStarted
+    url: https://opendocs.xiaojukeji.com/version2024/10957
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +71,30 @@ maintainers:
 common:
 - type: Website
   url: https://www.didiglobal.com
+- type: DeveloperPortal
+  url: https://opendocs.xiaojukeji.com/version2024
+- type: Documentation
+  url: https://opendocs.xiaojukeji.com/version2024
+- type: GettingStarted
+  url: https://opendocs.xiaojukeji.com/version2024/10957
+- type: GitHubOrganization
+  url: https://github.com/didi
+- type: Authentication
+  url: authentication/didi-authentication.yml
+- type: Conventions
+  url: conventions/didi-conventions.yml
+- type: Conformance
+  url: conformance/didi-conformance.yml
+- type: Packages
+  url: packages/didi-packages.yml
+- type: SDKs
+  url: packages/didi-packages.yml
+- type: DomainSecurity
+  url: security/didi-domain-security.yml
+- type: LLMsTxt
+  url: llms/didi-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
