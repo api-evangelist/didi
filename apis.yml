@@ -42,6 +42,14 @@ tags:
 - Transportation
 - Enterprise Travel
 - Expense Management
+- Authentication
+tags_raw:
+- Company
+- Mobility
+- Ride Hailing
+- Transportation
+- Enterprise Travel
+- Expense Management
 - OAuth
 apis:
 - name: DiDi Enterprise (DDES) Open API
